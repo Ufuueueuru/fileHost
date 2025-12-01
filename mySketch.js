@@ -36,7 +36,7 @@ function setup() {
 		// df = pd.DataFrame(allStates)
 		
 		
-		model = await tf.loadGraphModel('https://ufuueueuru.github.io/fileHost/model/model.json');
+		model = await tf.loadLayersModel('https://ufuueueuru.github.io/fileHost/model/model.json');
 		//print(model.predict([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
 	
 		loaded = true;
