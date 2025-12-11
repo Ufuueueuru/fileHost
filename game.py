@@ -77,6 +77,19 @@ class Actor:
         surfy = pygame.transform.rotate(surf, self.rotation * 180 / PI)
         screen.blit(surfy, ((200 - surfy.get_width() / 2 + self.dx)/2, (0 - surfy.get_height() / 2 + self.y)/2))
         
+        if (self.controls.left):
+            pygame.draw.rect(screen, (100, 130, 100), pygame.Rect(5, 180, 10, 10))
+        else:
+            pygame.draw.rect(screen, (190, 180, 180), pygame.Rect(5, 180, 10, 10))
+        if (self.controls.right):
+            pygame.draw.rect(screen, (100, 130, 100), pygame.Rect(20, 180, 10, 10))
+        else:
+            pygame.draw.rect(screen, (190, 180, 180), pygame.Rect(20, 180, 10, 10))
+        if (self.controls.boost):
+            pygame.draw.rect(screen, (100, 130, 100), pygame.Rect(35, 180, 10, 10))
+        else:
+            pygame.draw.rect(screen, (190, 180, 180), pygame.Rect(35, 180, 10, 10))
+        
         if (self.targetGood):
             pygame.draw.rect(screen, (0, 150, 0), pygame.Rect((self.targetX - 10)/2, (self.targetY - 10)/2, 10, 10))
         else:
@@ -218,7 +231,7 @@ def draw():
     
     pygame.display.flip()
 
-set_interval(draw, 0.166)
+set_interval(draw, 0.1)
 
 running = True
 while running:
